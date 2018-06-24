@@ -5,3 +5,7 @@ css  -  页面的样式
 javascript - 页面的交互
 
 document
+
+行级元素a span img-- 水平排布,靠内容撑开的
+块级元素p h1~h6 table div ul ol li --垂直分布  宽充满整个父元素 能设置宽和高
+                        如果不设置高 高就是内容撑开的
