@@ -1,17 +1,27 @@
 #header{
     background: #f2f2f2;
     height: 32px;
-
-}
-#login-contain{
-    line-height: 32px;
     color: #999;
     font-weight: 100;
     font-size: 12px;
 }
+#login-contain{
+    line-height: 32px;
+    /*display: inline;*/
+    float: left;
+}
 #login-contain a{
-    margin-left: 20px;
+    padding-left: 20px;
+    color: #999;
 }
 #login-contain a:hover{
     color:red;
+}
+#header-menu{
+    float: right;
+    line-height: 32px;
+}
+#header-menu .menu{
+    float: left;
+    padding: 0 14px;
 }
