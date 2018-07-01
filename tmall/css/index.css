@@ -26,7 +26,17 @@
 #header-menu .menu{
     float: left;
     padding: 0 14px;
+    position: relative;
 }
-#header-menu .icon-ai66{
+#header-menu .iconfont{
     color: red;
+    font-size: 14px;
+}
+#header-menu .menu-hd::after{
+    content: '';
+    border: 3px solid transparent;
+    border-top-color: #bbb;
+    position: absolute;
+    right: 4px;
+    top:16px;
 }
