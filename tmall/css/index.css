@@ -39,4 +39,9 @@
     position: absolute;
     right: 4px;
     top:16px;
+    transform-origin: 3px 1.5px;
+}
+#header-menu .menu-hd:hover::after{
+    transition: transform .2s linear;
+    transform: rotate(180deg);
 }
