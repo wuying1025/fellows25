@@ -1,7 +1,7 @@
 #header{
-    background: #f2f2f2;
+    background: #f00;
     height: 32px;
-    color: #999;
+    color: #fff;
     font-weight: 100;
     font-size: 12px;
 }
@@ -12,7 +12,7 @@
 }
 #login-contain a{
     padding-left: 20px;
-    color: #999;
+    color: #fff;
 }
 #login-contain a:hover{
     color:red;
@@ -28,8 +28,11 @@
     padding: 0 14px;
     position: relative;
 }
+#header-menu .menu a{
+    color:#fff;
+}
 #header-menu .iconfont{
-    color: red;
+    color: #fff;
     font-size: 14px;
 }
 #header-menu .menu-hd::after{
@@ -41,7 +44,37 @@
     top:16px;
     transform-origin: 3px 1.5px;
 }
+#header-menu .menu-hd:hover{
+     background: #ffffff;
+}
+#header-menu .menu-hd:hover a{
+    color: red;
+    text-decoration: underline;
+}
+#header-menu .menu-nav:hover a{
+    color:yellow;
+}
+
+#header-menu .menu-nav:hover a span{
+    color:#fff;
+}
+#header-menu .menu-nav a:hover span{
+    color:yellow;
+}
+#header-menu .menu-nav:hover .iconfont{
+    color:yellow;
+}
 #header-menu .menu-hd:hover::after{
     transition: transform .2s linear;
     transform: rotate(180deg);
+}
+#header-menu .sub-menu{
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+#header-menu .sub-menu li{
+    padding: 0 14px;
+}
+#header-menu .sub-menu a{
+    color:#999;
 }
