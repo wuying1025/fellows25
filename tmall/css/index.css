@@ -46,8 +46,12 @@
 }
 #header-menu .menu-hd:hover{
      background: #ffffff;
+
 }
-#header-menu .menu-hd:hover a{
+#header-menu .menu-hd:hover .sub-menu{
+    display: block;
+}
+#header-menu .menu-hd:hover>a{
     color: red;
     text-decoration: underline;
 }
@@ -71,10 +75,19 @@
 #header-menu .sub-menu{
     border: 1px solid #ccc;
     border-top: 0;
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none;
 }
 #header-menu .sub-menu li{
     padding: 0 14px;
 }
 #header-menu .sub-menu a{
     color:#999;
+}
+#header-menu .sub-menu a:hover{
+    color:#f00;
+    text-decoration: underline;
 }
