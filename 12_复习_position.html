@@ -5,55 +5,56 @@
     <title>Title</title>
     <style>
         div{
-
+            width: 200px;
             height: 200px;
-            /*display: inline-block;*/
-
+            float: left;
         }
         #div1{
-            width: 200px;
             background: #ff0000;
-            float: left;
         }
         #div2{
-            width: 200px;
             background: #00ff00;
-            float: left;
+            /*position: relative;*/
+            /*top:300px;*/
+            /*left:300px;*/
+            position: absolute;
+            left: 100px;
+            top:100px;
         }
         #div3{
-            width: 200px;
             background: #0000ff;
-            float: left;
         }
         #div4{
-            height: 100px;
+            margin-left: 200px;
+            height: 400px;
+            width: 800px;
             background: #cccccc;
-            clear: both;
+            float: none;
+            position: relative;
         }
         #div5{
-            width: 300px;
-            height: 100px;
-            background: #333;
+            height: 10px;
+            font-size: 40px;
+            overflow: hidden;
         }
-
-
     </style>
 </head>
 <body>
+<div id="div4">
     <div id="div1">
-        aa
+
     </div>
     <div id="div2">
-        bb
+
     </div>
     <div id="div3">
-        cc
-    </div>
-    <div id="div4">
 
     </div>
-    <!--<div id="div5">-->
+</div>
 
-    <!--</div>-->
+<div id="div5">
+    计算机计算机
+</div>
+
 </body>
 </html>

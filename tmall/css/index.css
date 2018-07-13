@@ -91,3 +91,41 @@
     color:#f00;
     text-decoration: underline;
 }
+#search img{
+    width: 240px;
+    float: left;
+}
+#search-contain{
+    float: left;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+#search-contain .search-list li{
+    float: left;
+}
+#search-contain .search-input{
+    border: 2px solid #ff2736;
+    height: 36px;
+}
+#search-contain .search-input input{
+    width: 490px;
+    height: 36px;
+    outline: none;
+    border: 0;
+    float: left;
+    text-indent: 10px;
+}
+#search-contain .search-input input::placeholder{
+    color:#ccc;
+    font-size: 18px;
+}
+#search-contain .search-input button{
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background: #ff2736;
+    color:#fff;
+    font-size: 18px;
+    outline: none;
+    float: left;
+}
