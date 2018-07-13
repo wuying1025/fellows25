@@ -129,3 +129,21 @@
     outline: none;
     float: left;
 }
+#search-contain .search-list li{
+    padding: 0 12px;
+    margin-top: 5px;
+    /*border:1px solid transparent;*/
+    border-right: 1px solid #ccc;
+}
+#search-contain .search-list li.last {
+    border-right: 0;
+}
+#search-contain .search-list li.first {
+    padding-left: 0;
+}
+#search-contain .search-list li a{
+    color:#ccc;
+}
+#search-contain .search-list li.red a{
+    color:#f00;
+}
