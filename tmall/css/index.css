@@ -91,6 +91,9 @@
     color:#f00;
     text-decoration: underline;
 }
+#search{
+    height: 130px;
+}
 #search img{
     width: 240px;
     float: left;
@@ -146,4 +149,38 @@
 }
 #search-contain .search-list li.red a{
     color:#f00;
+}
+#main-menu{
+    margin-left: 200px;
+    height: 30px;
+}
+#main-menu img{
+    width: 100px;
+    float: left;
+    margin-right:20px;
+}
+#main-menu ul{
+    float: left;
+    margin-top: 4px;
+}
+
+#main-menu li{
+    float: left;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: 100;
+}
+#banner{
+    position: relative;
+}
+#banner li a{
+    display: block;
+    width: 1230px;
+    margin: 0 auto;
+}
+#banner li a img{
+    width: 100%;
+}
+#banner .nav{
+    position: absolute;
 }
