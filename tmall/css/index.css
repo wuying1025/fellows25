@@ -151,7 +151,7 @@
     color:#f00;
 }
 #main-menu{
-    margin-left: 200px;
+    margin-left: 240px;
     height: 30px;
 }
 #main-menu img{
@@ -172,8 +172,9 @@
 }
 #banner{
     position: relative;
+    border-top: 2px solid #f00;
 }
-#banner li a{
+#banner .banner-img li a{
     display: block;
     width: 1230px;
     margin: 0 auto;
@@ -183,4 +184,29 @@
 }
 #banner .nav{
     position: absolute;
+    background: rgba(0,0,0,.5);
+    /*opacity: .2;*/
+    top:-31px;
+
 }
+#banner .nav li{
+    width: 200px;
+    height: 31px;
+    line-height: 31px;
+    color:#fff;
+}
+#banner .nav li a{
+    color:#fff;
+    font-weight: 100;
+}
+#banner .nav li i{
+    margin: 0 10px;
+}
+#banner .nav li.product{
+    background: #ff0000;
+    font-size: 16px;
+}
+#banner .nav li.product i{
+    font-size: 20px;
+}
+
