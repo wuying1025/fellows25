@@ -209,8 +209,11 @@
 #banner .nav li.product i{
     font-size: 20px;
 }
-#banner .nav li:hover{
+#banner .nav li:not(.product):hover{
     background: #ffffff;
+}
+#banner .nav li:not(.product):hover .banner-menu{
+    display: block;
 }
 #banner .nav li.red:hover,#banner .nav li.red:hover > a{
      color:red;
@@ -225,9 +228,10 @@
     position: absolute;
     top:31px;
     left:200px;
-    background: #fff;
+    background: #ccc;
     width: 852px;
     height: 500px;
+    display: none;
 }
 #banner .banner-left > li{
     margin: 10px 0;
@@ -235,6 +239,8 @@
 #banner .banner-menu .banner-left{
     width: 643px;
     height: 500px;
+    float: left;
+    background: #fff;
 }
 #banner .banner-menu .banner-menu-head{
      float: left;
@@ -254,5 +260,18 @@
 #banner .banner-menu-list li{
     float: left;
     margin-left: 10px;
+}
+#banner .banner-menu .banner-right{
+    float: left;
+    width: 180px;
+    margin-left: 20px;
+    line-height: 10px;
+}
+#banner .banner-menu .banner-right a{
+    float: left;
+}
+#banner .banner-menu .banner-right img{
+    width: 87px;
+    margin:0 1px 1px 0;
 }
 
