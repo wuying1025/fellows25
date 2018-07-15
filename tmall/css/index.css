@@ -189,13 +189,13 @@
     top:-31px;
 
 }
-#banner .nav li{
+#banner .nav >li{
     width: 200px;
     height: 31px;
     line-height: 31px;
     color:#fff;
 }
-#banner .nav li a{
+#banner .nav > li > a{
     color:#fff;
     font-weight: 100;
 }
@@ -208,5 +208,51 @@
 }
 #banner .nav li.product i{
     font-size: 20px;
+}
+#banner .nav li:hover{
+    background: #ffffff;
+}
+#banner .nav li.red:hover,#banner .nav li.red:hover > a{
+     color:red;
+ }
+#banner .nav li.blue:hover,#banner .nav li.blue:hover > a{
+    color:blue;
+}
+#banner .nav li.yellow:hover ,#banner .nav li.yellow:hover > a{
+    color:yellow;
+}
+#banner .banner-menu{
+    position: absolute;
+    top:31px;
+    left:200px;
+    background: #fff;
+    width: 852px;
+    height: 500px;
+}
+#banner .banner-left > li{
+    margin: 10px 0;
+}
+#banner .banner-menu .banner-left{
+    width: 643px;
+    height: 500px;
+}
+#banner .banner-menu .banner-menu-head{
+     float: left;
+ }
+#banner .banner-menu .banner-menu-head a{
+   font-size: 20px;
+    margin: 0 20px;
+}
+#banner .banner-menu .banner-menu-list{
+    width: 493px;
+    float: left;
+    line-height: 20px;
+    margin-top: 2px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+}
+#banner .banner-menu-list li{
+    float: left;
+    margin-left: 10px;
 }
 
