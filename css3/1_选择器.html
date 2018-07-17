@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*h1 ~ .ppp{*/
+            /*color:red;*/
+        /*}*/
+
+        p[class|='fff']{
+            color:red;
+        }
+        a:link{
+            color:green;
+        }
+        a:visited{
+            color:blue;
+        }
+        a:hover{
+            color:red;
+        }
+        a:active{
+            color:yellow;
+        }
+        /*input:focus{*/
+            /*color:red;*/
+        /*}*/
+        /*p:first-child{*/
+            /*color:red;*/
+        /*}*/
+        /*p:first-of-type{*/
+            /*color:red;*/
+        /*}*/
+
+        /*ul li:nth-of-type(4){*/
+            /*color:red;*/
+        /*}*/
+        li:nth-child(3n){
+            color:red;
+        }
+        p:empty{
+            height: 100px;
+            background: #ff0000;
+        }
+        input:checked{
+            width: 20px;
+            height: 20px;
+        }
+        :disabled{
+            background: #ff0000;
+        }
+        ::selection{
+            background: #ff0000;
+            color:#00ff00;
+        }
+        ::first-line{
+            color:blue;
+        }
+        ::first-letter{
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+        <form action="xxx.html">
+            用户名：<input type="text" name="username">
+
+            密码：<input type="password">
+
+            性别：<input name='sex' type="radio" checked="checked">女
+            <input name='sex' type="radio">男
+
+            爱好： <input type="checkbox">足球  <input type="checkbox">排球
+            <input type="checkbox">篮球
+
+            <input type="submit" value="注册">
+            <input type="reset" >
+            <button type="button" disabled="disabled">
+                申请
+            </button>
+        </form>
+
+
+
+
+
+
+        <!--<p></p>-->
+            <!--<p>ppppp</p>-->
+
+
+        <!--<ul>-->
+            <!--<li>001</li>-->
+            <!--<li>002</li>-->
+            <!--<li>003</li>-->
+            <!--<li>004</li>-->
+            <!--<li>005</li>-->
+
+        <!--</ul>-->
+
+
+
+        <!--<div id="div1">-->
+            <!--<h1>hhhh1h1h11hh</h1>-->
+            <!--<p>pppppp</p>-->
+            <!--<p>p1p1p1p1p</p>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<h2>hhh2222h</h2>-->
+            <!--<p>-->
+                <!--ppppppp-->
+            <!--</p>-->
+        <!--</div>-->
+
+
+        <!--<p class="ppp">ppppppp1111</p>-->
+        <!--<h1>hhhhh</h1>-->
+        <!--<h2>h2h2h2h2</h2>-->
+        <!--<p class="fff-sss">ppppppp</p>-->
+        <!--<a href="#">-->
+            <!--超链接-->
+        <!--</a>-->
+        <!--<input type="text" value="二星法国队">-->
+    </div>
+</body>
+</html>
