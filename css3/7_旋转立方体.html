@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #000000;
+            perspective:800px;
+            /*视线距离*/
+            /*perspective-origin:left -400px;*/
+            /*视角*/
+        }
+        #container{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            transform-style:preserve-3d;
+            /*子元素保持3D效果*/
+            animation: xxx 2s linear infinite;
+        }
+        @keyframes xxx {
+            from{
+
+            }
+            to{
+               transform: rotateY(360deg);
+            }
+        }
+        div:not(#container){
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,.5);
+            position: absolute;
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+            /*opacity: .5;*/
+            border-radius: 10px;
+        }
+        .two{
+            transform: translateZ(100px);
+        }
+        .four{
+            transform: rotateY(-180deg) translateZ(100px);
+        }
+        .five{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .three{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .one{
+             transform: rotateX(90deg) translateZ(100px);
+         }
+        .six{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div1" class="one">1</div>
+        <div id="div2" class="two">2</div>
+        <div id="div3" class="three">3</div>
+        <div id="div4" class="four">4</div>
+        <div id="div5" class="five">5</div>
+        <div id="div6" class="six">6</div>
+    </div>
+</body>
+</html>
