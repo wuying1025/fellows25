@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .b{
+            background: #0000ff;
+        }
+        .a{
+            background: #ff0000;
+        }
+    </style>
+
+</head>
+<body>
+<img id='myImg' class='imgclass' src="../img/2.jpg" alt="内存堆栈" />
+    <!--//当图象加载成功时执行一个函数-->
+<div id="div1" class="a">
+    <p>
+        pppppp
+    </p>
+</div>
+
+
+
+<script>
+
+//            var img = document.getElementById('myImg');
+//            img.onclick = function(){
+//                console.log(1111);
+//            }
+        var div1 = document.getElementById('div1');
+//            console.log(img.tagName);
+//            console.log(img.className);
+//            console.log(div1.innerHTML);
+        div1.onclick = function(){
+            console.log(div1.innerHTML);
+//                div1.innerHTML = '我是div1';
+//                div1.style.background = 'blue';
+            div1.className='b';
+        }
+</script>
+
+</body>
+</html>
