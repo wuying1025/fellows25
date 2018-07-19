@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            background: #cccccc;
+        }
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            float: left;
+        }
+        .clearfix:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="div1" class="clearfix">
+        <div id="div2">
+
+        </div>
+        <!--<div id="div3">-->
+
+        <!--</div>-->
+    </div>
+</body>
+</html>
