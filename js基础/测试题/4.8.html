@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+//        4345
+
+        for(var i=1000;i<10000;i++){
+            var three = Math.floor(i/100) % 10;
+            var two = Math.floor(i/10) % 10;
+            var four = Math.floor(i/1000);
+            if(i%13 == 0 && three + two == four){
+                console.log(i);
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
