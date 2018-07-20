@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    for(var i=100;i<=1000;i++){
+        var flag = true;
+        for(var j=2;j<=i/2;j++){
+            if(i%j == 0){
+                flag =false;
+                break;
+            }
+//            if(j == Math.floor(i/2)){
+//                console.log(i);
+//            }
+        }
+        if(flag){
+            console.log(i);
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>
