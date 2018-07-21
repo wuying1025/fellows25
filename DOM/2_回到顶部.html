@@ -36,7 +36,7 @@ dfdfdfdfdfdfd
 
 //           var top = document.documentElement.scrollTop;
 //           var top = document.body.scrollTop;
-
+           oDiv.style.backgroundPosition = '-200px';
            var top = document.body.scrollTop || document.documentElement.scrollTop;
 
 //           console.log(top);
@@ -44,8 +44,10 @@ dfdfdfdfdfdfd
                scrollTo(0,top*=0.6);
                console.log(top);
               if(top <= 1){
+
                     clearInterval(timer);
                     scrollTo(0,0);
+                  oDiv.style.backgroundPosition = '-22px';
                 }
            },50)
 
