@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="p1">p1p1p1p1p1p1</p>
+    <!--<p id="p1">ppppppppp</p>-->
+
+    <div id="div1" xx="sss">
+        <p>ppppppp</p>
+        <h1>hhhhhhhhh</h1>
+
+        sssssss
+    </div>
+    <input type="text" name="s1">
+    <input type="text" name="s1">
+    <input type="text" name="s1" class="111">
+
+    <script>
+
+//           var aP = document.getElementsByTagName('p');
+//           var p = document.getElementsByName('s1');
+//            document.getElementsByClassName('')
+
+//           p[0].style.color = 'green';
+//           p[1].style.background = 'green';
+        var div = document.getElementById('div1');
+
+
+        console.log(div.getAttribute('xx'));
+        div.xx = 'div2';
+        div.id = 'div2';
+
+        div.setAttribute('xx','div2');
+
+//        console.log(p1.tagName == 'p');
+//        事件三要素：事件源  事件执行函数  事件本身(事件对象)
+//        div.onclick = function(e){
+////            e = e || window.event;
+////            event
+//            console.log(e.target);
+//            console.log(e.currentTarget);
+//            console.log(this);// 当前对象引用
+
+//            if(e.target.tagName =='P'){
+//                console.log(1111);
+//            }else{
+//                console.log(2222);
+//            }
+
+//        }
+
+//        function fn(){
+//            console.log(this);
+//        }
+//
+//
+//        fn();
+//
+    </script>
+</body>
+</html>
