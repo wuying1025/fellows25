@@ -36,9 +36,12 @@
         <li>打开</li>
         <li>下载</li>
         <li>删除</li>
-        <li>复制</li>
+        <li id="aa">复制</li>
         <li>属性</li>
     </ul>
+    <!--<ul>-->
+        <!--<li>lllll</li>-->
+    <!--</ul>-->
     <!--<a id='a1' href="http://www.baidu.com">链接</a>-->
     <script>
 
@@ -47,11 +50,24 @@
 //            e.preventDefault();
 //        }
         var oMenu = document.getElementById('menu');
-        var aLi = document.getElementsByTagName('li');
+        var aLi = oMenu.getElementsByTagName('li');
+//        document.getElementById('aa').style.color = 'red';
+
         document.oncontextmenu = function(e){
-            oMenu.style.top = e.clientY +'px';
-            oMenu.style.left = e.clientX +'px';
             oMenu.style.display = 'block';
+            var dw = document.documentElement.offsetWidth;
+            var mw = oMenu.offsetWidth;
+            if( e.clientX > (dw - mw) ){
+                oMenu.style.left = (e.clientX - mw) +'px';
+                oMenu.style.top = e.clientY +'px';
+            }else{
+                oMenu.style.top = e.clientY +'px';
+                oMenu.style.left = e.clientX +'px';
+            }
+
+
+
+
 
 //            e.returnValue = false;//取消浏览器默认行为（IE）
 //            e.preventDefault();(标准)
