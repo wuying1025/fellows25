@@ -47,6 +47,7 @@
 //            e.preventDefault();
 //        }
         var oMenu = document.getElementById('menu');
+        var aLi = document.getElementsByTagName('li');
         document.oncontextmenu = function(e){
             oMenu.style.top = e.clientY +'px';
             oMenu.style.left = e.clientX +'px';
@@ -56,7 +57,24 @@
 //            e.preventDefault();(标准)
             return false;
         }
+        document.onclick = function () {
+            oMenu.style.display = 'none';
+        }
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onmouseover = function () {
+                this.style.background = '#ccc';
+            }
 
+            aLi[i].onmouseout = function () {
+                this.style.background = '';
+            }
+
+            aLi[i].onclick = function () {
+               alert(this.innerHTML);
+            }
+//            console.log(i);
+        }
+//        ......
 
 
     </script>
