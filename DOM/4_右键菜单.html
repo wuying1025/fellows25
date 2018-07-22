@@ -11,6 +11,11 @@
         li{
             list-style: none;
         }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+
         #menu{
             width: 120px;
             border: 1px solid #000;
@@ -56,13 +61,21 @@
         document.oncontextmenu = function(e){
             oMenu.style.display = 'block';
             var dw = document.documentElement.offsetWidth;
+            var dh = document.documentElement.offsetHeight;
             var mw = oMenu.offsetWidth;
+            var mh = oMenu.offsetHeight;
+
             if( e.clientX > (dw - mw) ){
                 oMenu.style.left = (e.clientX - mw) +'px';
-                oMenu.style.top = e.clientY +'px';
+            }else{
+                oMenu.style.left = e.clientX +'px';
+            }
+
+
+            if( e.clientY > (dh - mh) ){
+                oMenu.style.top = (e.clientY - mh) +'px';
             }else{
                 oMenu.style.top = e.clientY +'px';
-                oMenu.style.left = e.clientX +'px';
             }
 
 
