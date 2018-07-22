@@ -11,16 +11,22 @@
     </style>
 </head>
 <body>
-<label for="div1">用户名：</label>
-<input id="div1" type="text">
-<label for="pwd">密码：</label>
-<input id="pwd" type="password">
+<form action="xxx.html">
+    <label for="div1">用户名：</label>
+    <input id="div1" type="text" name="username">
+    <label for="pwd">密码：</label>
+    <input id="pwd" type="password" name="password">
+
+</form>
 <button id="btn">取消</button>
+<a href="back.html">链接</a>
 <script>
 //        var oDiv = document.getElementById('div1');
 //        div1.focus();
     
-
+//    btn.onclick = function () {
+//        history.forward();
+//    }
 
 
 //    console.log(window.screenLeft || window.screenX);
@@ -58,19 +64,33 @@
 //    console.log(timer1);
 //
 //    clearTimeout(timer1);
-
-    var timer = setInterval(function(){
-        console.log(1);
-    },1000)
-
-    btn.onclick = function(){
-        clearInterval(timer);
-    }
-
-
+//
+//    var timer = setInterval(function(){
+//        console.log(1);
+//    },1000)
+//
+//    btn.onclick = function(){
+//        clearInterval(timer);
+//    }
 
 
+//    btn.onclick = function(){
+////        location.href = 'back.html';
+//        console.log(navigator.userAgent);
+//    }
 
+//    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
+
+//    Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X)
+
+//    console.log(window.location.host);
+
+//    str.indexOf('abc')
+        if(navigator.userAgent.indexOf('iPhone') > -1){
+            location.href = 'http://m.taobao.com';
+        }else{
+            location.href = 'http://www.taobao.com';
+        }
 
 
 </script>
