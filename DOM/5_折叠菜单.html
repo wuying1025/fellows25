@@ -59,11 +59,18 @@
     </ul>
     <script>
         var aA = document.getElementsByTagName('a');
-        var aSubMenu = document.getElementsByClassName('sub-menu');
+        var oUl = document.getElementById('menu');
+        var aSubMenu = oUl.getElementsByTagName('ul');
+//        var aSubMenu = document.getElementsByClassName('sub-menu');
         for(var i=0;i<aA.length;i++){
             aA[i].xx=i;
             aA[i].onclick = function(){
-                aSubMenu[this.xx].style.display ='block';
+                if(aSubMenu[this.xx].style.display == 'block'){
+                    aSubMenu[this.xx].style.display = 'none';
+                }else{
+                    aSubMenu[this.xx].style.display ='block';
+                }
+
                 return false;
             }
         }
