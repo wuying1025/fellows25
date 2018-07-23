@@ -65,13 +65,28 @@
         for(var i=0;i<aA.length;i++){
             aA[i].xx=i;
             aA[i].onclick = function(){
-                if(aSubMenu[this.xx].style.display == 'block'){
-                    aSubMenu[this.xx].style.display = 'none';
+//                if(aSubMenu[this.xx].style.display == 'block'){
+//                    aSubMenu[this.xx].style.display = 'none';
+//                }else{
+//                    aSubMenu[this.xx].style.display ='block';
+//                }
+
+                if(getStyle(aSubMenu[this.xx],'display') == 'none'){
+                    aSubMenu[this.xx].style.display = 'block';
                 }else{
-                    aSubMenu[this.xx].style.display ='block';
+                    aSubMenu[this.xx].style.display ='none';
                 }
 
+
                 return false;
+            }
+        }
+
+        function getStyle(elem,prop){
+            if(elem.currentStyle){
+                return elem.currentStyle[prop];
+            }else{
+               return getComputedStyle(elem,false)[prop];
             }
         }
 
