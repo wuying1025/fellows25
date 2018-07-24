@@ -43,6 +43,7 @@
             margin-right: 10px;
             text-align: center;
             line-height: 20px;
+            cursor: pointer;
         }
         #container .nav li.selected{
             background: orange;
@@ -81,6 +82,9 @@
                 nowIndex = this.index;
                 changeImg(this.index);
             }
+            aLi[i].onselectstart = function(){
+                return false;
+            };
         }
         oNext.onclick = function(){
             nowIndex++;
@@ -113,11 +117,15 @@
             play();
         }
         play();
+//        function fn() {
+//            oNext.onclick();
+//        }
+        var fn = function(){
+            oNext.onclick();
+        }
 
         function play(){
-            timer = setInterval(function(){
-                oNext.onclick();
-            },1000);
+            timer = setInterval(fn,1000);
         }
 
 
