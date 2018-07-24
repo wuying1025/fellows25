@@ -64,26 +64,46 @@
             <li>4</li>
         </ul>
         <div class="arrows">
-            <span>&lt;</span>
-            <span>&gt;</span>
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
         </div>
     </div>
     <script>
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
-
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var nowIndex = 0;
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;
             aLi[i].onmouseover = function () {
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].className = '';
-                    aImg[j].className = '';
-                }
-               this.className = 'selected';
-                aImg[this.index].className = 'selected';
+                nowIndex = this.index;
+                changeImg(this.index);
             }
         }
+        oNext.onclick = function(){
+            nowIndex++;
+            if(nowIndex == aLi.length){
+                nowIndex = 0;
+            }
+           changeImg(nowIndex);
+        }
+        oPrev.onclick = function(){
+            nowIndex--;
+            if(nowIndex == -1){
+                nowIndex = aLi.length - 1;
+            }
+            changeImg(nowIndex);
+        }
 
+        function changeImg(index){
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className = '';
+                aImg[j].className = '';
+            }
+            aImg[index].className = 'selected';
+            aLi[index].className = 'selected';
+        }
 
 
 
