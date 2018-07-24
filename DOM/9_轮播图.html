@@ -71,6 +71,7 @@
     <script>
         var aLi = document.getElementsByTagName('li');
         var aImg = document.getElementsByTagName('img');
+        var oContainer = document.getElementById('container');
         var oPrev = document.getElementById('prev');
         var oNext = document.getElementById('next');
         var nowIndex = 0;
@@ -104,6 +105,24 @@
             aImg[index].className = 'selected';
             aLi[index].className = 'selected';
         }
+
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function () {
+            play();
+        }
+        play();
+
+        function play(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            },1000);
+        }
+
+
+
+
 
 
 
