@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #container .imgs{
+            position: absolute;
+            width: 2080px;
+        }
+        #container .imgs img{
+            float: left;
+        }
+        #container .nav{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #container .arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #container .nav li,.arrows span{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #fff;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        #container .nav li.selected{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="imgs" id="img-container">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
+        <ul class="nav">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="arrows">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+    </div>
+    <script src="jslib.js"></script>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var aImg = document.getElementsByTagName('img');
+        var oContainer = document.getElementById('container');
+        var oImgCon = document.getElementById('img-container');
+
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var nowIndex = 0;
+
+        for(var i=0;i<aImg.length;i++){
+            aImg[i].style.zIndex = aImg.length - i;
+        }
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                nowIndex = this.index;
+                changeImg(this.index);
+            }
+            aLi[i].onselectstart = function(){
+                return false;
+            };
+        }
+        oNext.onclick = function(){
+            nowIndex++;
+            if(nowIndex == aLi.length){
+                nowIndex = 0;
+            }
+           changeImg(nowIndex);
+        }
+        oPrev.onclick = function(){
+            nowIndex--;
+            if(nowIndex == -1){
+                nowIndex = aLi.length - 1;
+            }
+            changeImg(nowIndex);
+        }
+
+        function changeImg(index){
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className = '';
+//                aImg[j].className = '';
+            }
+            aLi[index].className = 'selected'
+//            oImgCon.style.left = -aImg[0].offsetWidth * index +'px';
+            animate(oImgCon,{left:-aImg[0].offsetWidth * index});
+//            aImg[index].className = 'selected';
+//            aImg[index].style.zIndex = ++zIndex;
+//            aImg[index].style.opacity = 0;
+//            animate(aImg[index],{opacity:100});
+//            aLi[index].className = 'selected';
+            //
+        }
+
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function () {
+            play();
+        }
+
+
+//        function fn() {
+//            oNext.onclick();
+//        }
+        var fn = function(){
+            oNext.onclick();
+        }
+        play();
+
+        function play(){
+            timer = setInterval(fn,1000);
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
