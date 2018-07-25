@@ -128,13 +128,14 @@
         oContainer.onmouseout = function () {
             play();
         }
-        play();
+
 //        function fn() {
 //            oNext.onclick();
 //        }
         var fn = function(){
             oNext.onclick();
         }
+        play();
 
         function play(){
             timer = setInterval(fn,1000);
