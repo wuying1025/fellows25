@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <ul id="ul1">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+    </div>
+
+
+    <button id="add">add</button>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oBtn = document.getElementById('add');
+        var oUl = document.getElementById('ul1');
+        oUl.onclick = function(e){
+            console.log(e.target.innerHTML);
+            console.log(e.currentTarget.innerHTML);
+            e.stopPropagation();
+        }
+        div1.onclick = function(){
+            console.log(111111);
+        }
+        //事件委托   或者  事件代理
+//        for(var i=0;i<aLi.length;i++){
+//            aLi[i].onclick = function(){
+//                console.log(this.innerHTML);
+//            }
+//        }
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+
+    </script>
+</body>
+</html>
