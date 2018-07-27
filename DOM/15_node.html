@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<div id="div2">-->
+        <!--div2-->
+    <!--</div>-->
+    <div id="div1">
+        99999999
+        <div id="div2">
+            div2
+        </div>
+        <div>
+            ddddd
+
+        </div>
+    </div>
+
+    <script>
+
+        var oDiv = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+
+        //        var divs = document.getElementsByTagName('div');
+//
+//
+//        divs.push('21111');
+//        oDiv.appendChild(oDiv2);
+//        var p = document.createElement('p');
+//        p.innerHTML = '111111';
+
+//        oDiv.insertBefore(p, oDiv2);
+//        oDiv.appendChild(p);
+//        var o = oDiv.removeChild(oDiv2);
+//        console.log(o);
+
+//        console.log(oDiv.hasChildNodes());
+
+
+//        console.log(getNext(oDiv2));
+        console.log(getFirst(oDiv));
+
+        function getFirst(elem) {
+            var f = elem.firstChild;
+            return f.nodeType != 1? getNext(f):f;
+        }
+
+//        elem = div
+        function getNext(elem){
+            do{
+                elem = elem.nextSibling
+            }while (elem.nodeType != 1 && elem != null);
+
+            return elem;
+        }
+
+    </script>
+</body>
+</html>
