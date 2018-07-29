@@ -3,23 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+        li{
+            padding: 2px;
+            border: 1px solid;
+            margin: 3px;
+        }
+        /*div{*/
+            /*margin-left: 30px;*/
+        /*}*/
+
+
+    </style>
 </head>
 <body>
-    <div id="div1">
-
+<div id="div2">
+    <div id="div1" class="aa">
+        <p>ppppp</p>
     </div>
+</div>
+
+    <!--<ul>-->
+        <!--<li>111</li>-->
+        <!--<li>222</li>-->
+        <!--<li>333</li>-->
+    <!--</ul>-->
     <script src = jquery-1.12.4.js></script>
     <script>
 //        var oDiv = document.getElementById('div1');
+//        var oDiv2 = document.getElementById('div2');
+//
+//        oDiv2.appendChild(oDiv.cloneNode());
 //        oDiv.xx = 'yy';
 //        oDiv.setAttribute('xx','yy');
 
         $(function () {
+            $('#div1').click(function () {
+                console.log(111111);
+            });
+            $('#div2').append($('#div1').clone(true));
 
-            $('#div1').attr('xx','c1');
-            $('#div1').prop('yy','c2');
+//            console.log($('li').innerHeight());
+//            console.log($('li').outerHeight());
+//                console.log($('#div1').offset());
+//            console.log($('#div1').offsetParent());
+//            $(document).scroll(function () {
+//                console.log($(document).scrollTop());
+//            });
 
-            console.log($('#div1').prop('yy'));
+//            $('#div1').addClass('bb');
+//            $('#div1').removeClass('bb');
+//                console.log($('#div1').hasClass('cc'));
+//            $('#div1').toggleClass('bb');
+
+//            $('#div1').css('width',function(){
+//
+//                var a = 100,b=200;
+//
+//                return a + b;
+//
+//            });
+//            $('#div1').attr('xx','c1');
+//            $('#div1').prop('yy','c2');
+//            $('#div1').removeAttr('id');
+//            console.log($('#div1').prop('yy'));
 
 
 
