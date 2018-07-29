@@ -30,9 +30,27 @@
     <div>
         <h1>hhhhhhh</h1>
     </div>
+    <input type="text" value="ttt">
+    <input type="hidden" value="sss">
+    <button></button>
+    <input type="button" disabled = "disabled" value="提交">
+    <select name="" id="">
+        <option>黑大</option>
+        <option selected="selected">理工</option>
+        <option>林大</option>
+        <option>农大</option>
+    </select>
+    <input type="file">
+    <input type="checkbox" checked="checked" disabled = "disabled" >
+    <input type="checkbox" >
+    <textarea name="" id="" cols="30" rows="10"></textarea>
     <script src="jquery-1.12.4.js"></script>
     <script>
        $(function(){
+            $(':button:disabled').val('注册');
+//           $(':selected').css('width','200');
+//           $(':button')
+//           $('input[type="text"]').css('background','red');
             //链式操作
 //          $('.div2 ~ p').css({
 //              background:'blue',
