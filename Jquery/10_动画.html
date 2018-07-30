@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">显示</button>
+<button id="btn1">隐藏</button>
+
+<div id="div1">div</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+   $('#btn').on('click',function () {
+//       $('#div1').fadeIn();
+       $('#div1').slideUp(2000);
+//       $('#div1').animate({
+//           width:500
+//       },2000,'linear',function () {
+//           console.log(1111);
+//       }).animate({
+//           height:300
+//       },2000,'linear',function () {
+//           console.log(222);
+//       })
+
+   })
+
+   $('#btn1').on('click',function () {
+       $(':animated').html('aaaaaa');
+       $('#div1').stop(true,false);
+
+   });
+//   $('#btn1').on('click',function () {
+////       $('#div1').fadeTo(2000,.5,function () {
+////           console.log(1111);
+////       });
+//       $('#div1').slideUp();
+//
+//   })
+
+//    var str = '   ddddd   ddd   ';
+//
+//    console.log($.trim(str));
+
+//    var o1 = {
+//        name:'zs',
+//        age:12
+//    }
+//    var o2 = {
+//        sex:'12',
+//        age:18
+//    }
+
+//    console.log($.extend(o1,o2));
+//    console.log(o1);
+//    console.log(o2);
+
+    var arr = [1,2,3,4,5];
+    $.each(arr,function(index,elem){
+        console.log(index);
+        console.log(elem);
+    });
+
+
+</script>
+</body>
+</html>

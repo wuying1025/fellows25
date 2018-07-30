@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">div</div>
+<input type="text" id="ipt">
+<script src="jquery-1.12.4.js"></script>
+<script>
+    var fn = function () {
+        console.log(1111);
+    };
+//        $('#div1').on('click',fn);
+    $('#ipt').mousedown(function(e){
+        console.log(e.which);
+    });
+//        $('#div1').off('click',fn);
+//    $('#div1').hover(function(e){
+//        console.log(1111);
+//    },function(){
+//        console.log(22222);
+//    });
+//    $('#div1').on('click', fn);
+//
+//    $('#div1').trigger('click');
+//    $('#div1').trigger('click');
+
+
+//    $('#div1').one('click',fn);
+
+
+//    $('#div1').click(function () {
+//
+//
+//    });
+
+
+
+</script>
+</body>
+</html>
