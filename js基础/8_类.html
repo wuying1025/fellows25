@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function Person() {
+        this.name = 'zs';
+//        this.xx = {name:'zs',age:12};
+//        this.say = function(){
+//            console.log(11111);
+//        }
+    }
+    // 原型对象
+//    Person.prototype.xx = {name:'zs',age:12};
+    Person.prototype.say = function(){
+        console.log(this.name);
+    }
+
+
+    function Son(n){
+        this.name = n;
+    }
+
+    Son.prototype = new Person();
+
+    var s = new Son('lisi');
+    s.say();
+
+    var s1 = new Son('ww');
+    s1.say();
+
+
+//
+//    var p = new Person();
+//    p.say();
+//    p.xx.name = 'lisi';
+//    p.say();
+//
+//    var p1 = new Person();
+//    p1.say();
+
+
+
+
+</script>
+</body>
+</html>
