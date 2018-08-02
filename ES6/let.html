@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+
+
+<script>
+//    ECMAScript   javaScript
+//ES6   2015/6   ES2015
+
+
+    // 定义变量的关键字
+    // 没有变量提升,不能重复声明,暂时性死区(临时失效区),
+    //  块级作用域
+//    let a = 1;
+//    a = 2;
+
+//    console.log(a);
+//    let a = 11;
+
+//    var a = 2;
+//    function fn(){
+//        let a = 1;
+//        console.log(a);
+//    }
+//    fn();
+//    console.log(a);
+//    console.log(b);
+
+//    for(let i=0;i<5;i++){
+//        console.log(i);
+//    }
+//
+//    console.log(i);
+
+//
+//    {
+//        let a = 1;
+//    }
+//
+//    console.log(a);
+
+
+    var aLi = document.getElementsByTagName('li');
+
+    for(var i=0;i<aLi.length;i++){
+        (function(index){
+            aLi[index].onclick = function(){
+                console.log(index);
+            }
+        })(i);
+    }
+
+    //内存泄漏 --- 内存溢出
+
+
+    //一个外部函数里面声明了一个内部函数，内部函数里面调用了
+    //外部函数的局部变量，这个时候，局部变量不被释放
+
+
+
+//    function f1(){
+//        var n = 100;
+//        var f2 = function(){
+//            console.log(n);
+//        }
+////        return f2;
+//    }
+//    var result = f1();
+//    result();
+
+
+    //函数立即调用
+//    var f2 = function(index){
+//        console.log(11111);
+//    }
+//
+//    f2(i);
+//
+//    (function(index){
+//        console.log(11111);
+//    })(i);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
