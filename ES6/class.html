@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    function User(){
+//        this.name='zs';
+//    }
+//    User.prototype.say = function(){
+//        console.log(this.name);
+//    }
+//
+//
+//    function Son(n){
+//        this.name = n;
+//    }
+//    Son.prototype = new User();
+//    var s = new Son('lisi');
+//    s.say();
+
+
+    class User{
+        constructor(n){
+            this.xx=n;
+        }
+
+        static say(a,b,c,d){
+           return a*b/c+d;
+        }
+    }
+
+    var result = User.say(1,2,3,4);
+    console.log(result);
+
+//    var u = new User('zw');
+//    u.say();
+
+
+
+
+
+
+
+
+//    class Son extends User{
+//        constructor(n,a){
+//            super(n);
+//            this.age = a;
+//        }
+//        eat(){
+//            console.log(this.age);
+//        }
+//    }
+//
+//    var s = new Son('zl',12);
+//    s.eat();
+//    s.say();
+
+
+
+//    var u = new User('zw');
+//    u.say();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
