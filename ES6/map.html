@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var m = new Map();
+    m.set('a',1233);
+    m.set(1,'113');
+    m.set(true,'xxx');
+    m.set(undefined,'xxx');
+    m.set(null,'xxx');
+    m.set(NaN,'xxx');
+    var arr = [1,2];
+    var obj = {};
+    m.set(arr,'yy');
+    m.set(obj,'yy');
+    m.set(1,'123');
+
+    m.delete('a');
+//    m.clear();
+
+
+    console.log(m.get(1));
+
+
+
+
+
+
+
+
+
+
+    //    console.log(m.size);
+
+//    var obj = {
+//        name:'zs',
+//    }
+
+
+
+
+
+</script>
+</body>
+</html>
