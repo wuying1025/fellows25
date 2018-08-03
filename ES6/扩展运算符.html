@@ -42,14 +42,42 @@
 //    }
 
 // rest
+//
+//        var fn = (...args)=>{
+////            console.log(arguments[0]);
+//            console.log(args[0]);
+//
+//        }
+//
+//        fn([1,2,3]);
 
-        var fn = (...args)=>{
-//            console.log(arguments[0]);
-            console.log(args[0]);
+    var xxx = {d:4};
+    var o1 = {
+        a:xxx,
+        b:2
+    };
+    var o2 = {
+        c:3
+    };
+    var obj = {
+        ...o1,
+        ...o2
+    };
+//    console.log(o1);
+    console.log(obj);
+    obj.a.d = 5;
+    console.log(o1);
 
-        }
 
-        fn([1,2,3]);
+//    var o = {
+//        a:1
+//    }
+//    var o2 = o;
+//
+//    console.log(o2);
+//    o2.a = 3;
+//    console.log(o);
+//
 
 
 </script>
