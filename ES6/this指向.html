@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function fn(a,b){
+        console.log(a,b);
+        console.log(this);
+    }
+
+    var o = {
+        name:'zs'
+    }
+
+//    fn.call(o,1);
+//    var arr = [1,2];
+//    fn.apply(o,arr);
+
+   var f = fn.bind(o,1,2);
+    f();
+//   fn();
+
+
+
+
+
+</script>
+</body>
+</html>
