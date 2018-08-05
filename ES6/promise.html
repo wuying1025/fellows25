@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    //回调嵌套  callback cell
+//    $.get('a.json',function(d1){
+//        console.log(d1.a);
+//        var t = d1.teacher;
+//        $.get('b.json',{name:t},function(d2){
+//            console.log(d2.b);
+//            $.get('c.json',{name:t},function(d3){
+//                console.log(d3.c);
+//            });
+//
+//        });
+//    });
+//
+//    var f1 = function () {
+//        var p = new Promise(function(resolve,r){
+//            setTimeout(function(){
+//                resolve(11111);
+//            },1000);
+//        });
+//        return p;
+//    }
+//
+//    var f2 = function () {
+//        var p = new Promise(function(resolve,r){
+//            setTimeout(function(){
+//                resolve(222222);
+//            },1000);
+//        });
+//        return p;
+//    }
+
+
+//    var p = new Promise(function(resolve,reject){
+//            console.log('0000');
+//            setTimeout(function(){
+//                resolve(2222);
+//            },1000);
+//    });
+//
+//    p.then((data)=>{
+//        console.log(data);
+//        return f1();
+//    }).then((data)=>{
+//            console.log(data);
+//            return f2();
+//        }).catch(()=>{
+//
+//    });
+
+
+//
+//   var p = new Promise(function(resolve,reject){
+//        setTimeout(function(){
+//            resolve(11111);
+//        },3000)
+//    });
+//
+//    p.then((data)=>{
+//        console.log(data);
+//        return new Promise(function(resolve,reject){
+//            setTimeout(function(){
+//                resolve(2222);
+//            },1000);
+//        });
+//    }).then((data)=>{
+//        console.log(data);
+//
+//    });
+//    console.log('sssssssssss');
+//
+//    var p1 = new Promise(function(resolve,reject){
+//        setTimeout(function(){
+////            console.log(1111111);
+//            resolve(11111);
+//        },3000)
+//    });
+//    var p2 = new Promise(function(resolve,reject){
+//        setTimeout(function(){
+//            reject(222);
+//        },200)
+//    });
+//    var p3 = new Promise(function(resolve,reject){
+//        setTimeout(function(){
+////            console.log(3333);
+//            resolve(333);
+//        },100)
+//    });
+//
+//    var p = Promise.all([p1,p2,p3]);
+//    p.then((data)=>{
+//        console.log(data);
+//    },(data)=>{
+//        console.log(data+'sssss');
+//    });
+//
+//
+//        //竞速
+////        var p = Promise.race([p1,p2,p3]);
+////        p.then((data)=>{
+////            console.log(data);
+////        },(data)=>{
+////            console.log(data+'sssss');
+////        });
+
+
+//    var num = 0;
+//    setTimeout(function(){
+//        num++;
+//        if(num == 3){
+//            console.log('success');
+//        }
+//    },1000)
+//
+//    setTimeout(function(){
+//        num++;
+//        if(num == 3){
+//            console.log('success');
+//        }
+//    },2000)
+//
+//    setTimeout(function(){
+//        num++;
+//        if(num == 3){
+//            console.log('success');
+//        }
+//    },3000)
+
+//    var timer = setInterval(function(){
+//        if(num == 3){
+//            console.log('success');
+//            clearInterval(timer);
+//        }
+//    },50)
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
