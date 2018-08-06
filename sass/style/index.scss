@@ -1,10 +1,12 @@
 /* 这个是一个多行注释  */
 //这个是一个单行注释
-/*!  这个是一个强制注释   */
 
-$color:#f00;
+$color:rgba(0,0,0,.5);
+/*!  这个是一个#{$color}强制注释   */
+
 $bg: background;
 $test:test;
+@import "_common";
 #div1{
     background: $color;
     color: $color;
@@ -19,6 +21,7 @@ $test:test;
         &-test{
             height: 10px;
         }
+
     }
 
 }
@@ -40,3 +43,72 @@ $test:test;
 ##{$test}{
     #{$bg}:url("");
 }
+
+
+@mixin xxx($size,$color:#ccc){
+    width: $size;
+    height: $size;
+    background: $color;
+}
+#div4{
+    @include xxx(200px);
+}
+#div5{
+    @include xxx($color:#0f0,$size:300px);
+    a{
+        font-size: 12px;
+    }
+}
+
+#div6{
+
+    color: #000;
+    @extend #div5
+}
+#div7{
+    color:lighten($color, 20%);
+    background:opacify($color, 0.3);
+}
+
+$m: (light: #000, dark: #fff);
+#div8{
+    color:map-get($m, light);
+    border:map-values($m);
+
+}
+@for $i from 1 to 5{
+    .cl-#{$i}{
+        width: $i+px;
+    }
+}
+$list:success,fail,warn;
+
+@each $var in $list{
+    .#{$var}{
+        background: icon-$var;
+    }
+}
+$i:5;
+@while $i>2{
+    .div1{
+        width: 100px;
+    }
+    $i : $i - 2;
+}
+
+@function xxx($num){
+    @if($num > 10){
+        @return $num - 10;
+    }@else if($num > 5){
+        @return $num - 5;
+    }@else{
+        @return $num - 1;
+    }
+}
+
+#div10{
+    width: xxx(4)+px;
+}
+
+
+
