@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+
+//    function* fn(){
+    //        yield 'hello';
+    //        yield 'world';
+    //        yield 'generator';
+    //        return 0;
+    //    }
+
+    function request(url){
+        $.get(url,res=>{
+            console.log(res);
+//            console.log(g.next());
+        })
+//        setTimeout(function(){
+//            console.log(1);
+//        },0);
+        return 0;
+    }
+
+    function* fn(){
+        yield request('a.json');
+        yield request('b.json');
+        yield request('c.json');
+        return 0;
+    }
+
+    var g = fn();
+    var a = g.next();
+//    var b = g.next();
+//    var c = g.next();
+    console.log(a);
+
+
+
+//    function* fn(){
+//        var x =  2 * (yield 3+5);
+//        var y = yield x / 4;
+//        return y;
+//    }
+
+//    var gen = fn();
+//    var a =gen.next());
+//    console.log(gen.next(a.value));
+//    console.log(gen.next(3));
+
+
+
+
+</script>
+</body>
+</html>
