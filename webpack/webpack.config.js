@@ -10,7 +10,8 @@ module.exports = {
     },
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js'
+        filename:'[name].js',
+        publicPath:'http://127.0.0.1:8080/'
     },
     module:{
         rules:[
@@ -21,6 +22,22 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
+            },
+            {
+                test:/\.(jpg|png|gif|jpeg)$/i,
+                use:[
+                    {
+                        loader:"url-loader",
+                        options:{
+                            limit:500,
+                            outputPath:"images/"
+                        }
+                    }
+                ]
+            },
+            {
+                test:/\.(html|htm)$/i,
+                loader:"html-withimg-loader"
             }
         ]
     },
