@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 const PurifycssWebpack =require('purifycss-webpack');
 const entry = require('./webpack_config/entry-config.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode:"development",
     entry:entry,
@@ -88,7 +89,14 @@ module.exports = {
         new PurifycssWebpack({
             paths: glob.sync(path.join(__dirname, 'src/*.html'))
         }),
-        new webpack.BannerPlugin('唯创')
+        new webpack.BannerPlugin('唯创'),
+        new webpack.ProvidePlugin({
+            $:"jquery"
+        }),
+        new CopyWebpackPlugin([{
+            from:__dirname + '/src/public',
+            to:"public"
+        }])
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
