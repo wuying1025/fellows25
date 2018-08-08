@@ -1,13 +1,13 @@
 const path = require('path');//webpack自带path模块
 const webpack = require('webpack');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
+const PurifycssWebpack =require('purifycss-webpack');
+const entry = require('./webpack_config/entry-config.js');
 module.exports = {
     mode:"development",
-    entry:{
-        'index': "./src/index.js",
-        'index2':"./src/index2.js"
-    },
+    entry:entry,
     output:{
         path:path.resolve(__dirname,'dist'),
         filename:'[name].js',
@@ -20,7 +20,12 @@ module.exports = {
                 // use:['style-loader','css-loader']
                 use:ExtractTextWebpackPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: [{
+                        loader:"css-loader",
+                        options:{
+                            importLoaders:1
+                        }
+                    },"postcss-loader"]
                 })
             },
             {
@@ -38,6 +43,24 @@ module.exports = {
             {
                 test:/\.(html|htm)$/i,
                 loader:"html-withimg-loader"
+            },
+            {
+                test:/\.scss$/,
+                use:ExtractTextWebpackPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader","sass-loader"]
+                })
+            },{
+                test:/\.(jsx|js)$/,
+                use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:[
+                            'es2015'
+                        ]
+                    }
+                },
+                exclude:/node_modules/
             }
         ]
     },
@@ -61,7 +84,11 @@ module.exports = {
         //     hash:true,
         //     template:'./src/index2.html'
         // }),
-        new ExtractTextWebpackPlugin("./css/style.css")
+        new ExtractTextWebpackPlugin("./css/style.css"),
+        new PurifycssWebpack({
+            paths: glob.sync(path.join(__dirname, 'src/*.html'))
+        }),
+        new webpack.BannerPlugin('唯创')
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),
