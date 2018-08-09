@@ -5,16 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="app">
-        {{msg}}
+    <div id="app" v-html="xx">
+        <!--{{msg}}-->
     </div>
     <script src="vue.js"></script>
     <script>
-
         var vm = new Vue({
             el:'#app',
             data:{
-                msg:'hello world'
+                xx:'<h1>hhhhhhhh</h1>'
             }
         });
 
