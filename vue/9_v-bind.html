@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .font{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="fn">toggle</button>
+    <!--<div id="div1" :class="classObj">dddddd</div>-->
+    <!--<div id="div1" :class="{red:isRed,font:isFont}">dddddd</div>-->
+    <!--<div id="div1" :class="[classA,classB]">dddddd</div>-->
+
+    <!--<div id="div1" :style="{background: styleA,'font-size':styleB}">dddddd</div>-->
+    <!--<div id="div1" :style="styleObj">dddddd</div>-->
+    <div id="div1" :style="[styleArr1,styleArr2]">dddddd</div>
+
+
+</div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                styleArr1:{
+                    background: 'red',
+                },
+                styleArr2:{
+                    'font-size':'30px'
+                },
+                styleObj:{
+                    background: 'red',
+                    'font-size':'30px'
+                },
+                styleA:'',
+                styleB:'',
+                t:'xx',
+                isRed:false,
+                isFont:true,
+                classObj:{
+                    red:false,
+                    font:true
+                },
+                classA:'red',
+                classB:'font'
+            },
+            methods:{
+                fn(){
+                    this.isRed = !this.isRed;
+                }
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>
