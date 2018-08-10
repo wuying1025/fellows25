@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 400px;
+            margin: 0 auto;
+        }
+        h1{
+            text-align: center;
+        }
+
+        li{
+            list-style: none;
+            height: 50px;
+            margin-bottom:10px ;
+            background: green;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        span{
+            float: right;
+        }
+        .red{
+            background: red;
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>services</h1>
+        <ul>
+            <li v-for="(obj,index) in arr" :class="{red:obj.active}" @click="obj.active = !obj.active">
+               {{obj.name}}  <span>{{obj.price}}</span>
+            </li>
+        </ul>
+        <hr>
+        total: <span>{{total}} </span>
+    </div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[
+                {name:'aaa',price:123,active:false},
+                {name:'bbb',price:542,active:false},
+                {name:'ccc',price:467,active:false},
+                {name:'ddd',price:936,active:false},
+                {name:'eee',price:864,active:false}
+            ],
+        },
+        methods:{
+//            fn(index){
+////                event.target.active = true;
+//                this.arr[index].active = !this.arr[index].active;
+//            }
+            fn(obj){
+                obj.active = !obj.active;
+//                if(obj.active){
+//                    this.total += obj.price;
+//                }else{
+//                    this.total -= obj.price;
+//                }
+            },
+        },
+        computed:{
+            total(){
+                let sum = 0;
+                this.arr.forEach(function(elem,index){
+                    if(elem.active){
+                        sum += elem.price;
+                    }
+                })
+                return sum;
+            }
+        }
+    })
+
+
+
+</script>
+</body>
+</html>
