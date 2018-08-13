@@ -6,14 +6,27 @@
 </head>
 <body>
     <div id="app">
-        <demo1 x-m-sg="123" :yy="m1"></demo1>
+        <demo1 x-m-sg="123" :yy="m1">
+            <p slot="p1">ppppppppppp</p>
+            <p slot="p2">p2p2p2p2p2p</p>
+        </demo1>
         <demo1 x-m-sg="456" :yy="m2"></demo1>
         {{msg}}
     </div>
     <script type="text/x-template" id="temp">
         <div>
             {{XMSg}}
+            <slot name="p1">
+                <p>我是默认的p1p1p1p1p1p1p</p>
+            </slot>
             <h1>{{yy}}</h1>
+            <slot name="p2">
+                <span>我也是默认的</span>
+            </slot>
+            <slot>
+
+            </slot>
+
         </div>
     </script>
 <script src="vue.js"></script>
