@@ -20,8 +20,8 @@
 <div id="app">
     <button @click="fun(2)">click</button>
     {{msg}}
-    <div id="div1" @click="click1">
-        <div id="div2" @click.stop="click2"></div>
+    <div id="div1" @click.once="click1">
+        <div id="div2" @click.once.stop="click2"></div>
     </div>
 </div>
 <script src="vue.js"></script>
