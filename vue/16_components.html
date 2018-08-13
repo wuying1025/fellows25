@@ -6,12 +6,9 @@
 </head>
 <body>
     <div id="app">
-        <demo1></demo1>
-        <demo1></demo1>
+        <demo1 x-m-sg="123" :yy="m1"></demo1>
+        <demo1 x-m-sg="456" :yy="m2"></demo1>
         {{msg}}
-    </div>
-    <div id="app2">
-        <demo></demo>
     </div>
 <script src="vue.js"></script>
 <script>
@@ -20,15 +17,18 @@
 //        template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
 //    });
 
-    new Vue({
+    var vm = new Vue({
         el:'#app',
         data:{
-            msg:'xx'
+            msg:'xx',
+            m1: 'haha',
+            m2: 'hehe'
         },
         //局部的组件
         components:{
             demo1:{
-                template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+                template:"<div>{{XMSg}} <h1>{{yy}}</h1></div>",
+                props:['XMSg','yy']
             }
         }
     })
