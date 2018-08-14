@@ -1,9 +1,12 @@
 <template>
   <div id="app">
+
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/mine">Mine</router-link>
+      <router-link to="/mine">Mine</router-link> |
+      <router-link to="/mine/test1">子路由1</router-link> |
+      <router-link to="/mine/test2">子路由2</router-link>
     </div>
     <router-view/>
   </div>
