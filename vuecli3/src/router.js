@@ -32,12 +32,18 @@ export default new Router({
       children:[
           {
             path:'test1',
+            name:'test1',
             component:Test1
+          },
+          {
+              path:'test2/:xx/:age',
+              component:Test2
           },
           {
               path:'test2',
               component:Test2
-          }
+          },
+
       ]
     },
   ],
