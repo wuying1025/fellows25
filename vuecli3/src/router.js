@@ -24,6 +24,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      alias:'/lkw'
     },
     {
       path: '/mine',
@@ -33,7 +34,7 @@ export default new Router({
           {
             path:'test1',
             name:'test1',
-            component:Test1
+            component:Test1,
           },
           {
               path:'test2/:xx/:age',
@@ -46,5 +47,13 @@ export default new Router({
 
       ]
     },
+      {
+          path:'/home',
+          redirect: '/'
+      },
+      {
+          path:'/home/:xx/:age',
+          redirect: '/mine/test2/:xx/:age'
+      },
   ],
 });
