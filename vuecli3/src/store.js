@@ -17,6 +17,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
-
+      addNum ({ commit },num) {
+          num++;
+          commit('add',num)
+      }
   },
+  getters:{
+    count100:(state)=>{
+      return state.count+100;
+    }
+  }
 });
