@@ -2,13 +2,15 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
+      <router-link to="/about/1">About1</router-link> |
+      <router-link to="/about/2">About2</router-link> |
       <router-link to="/mine">Mine</router-link> |
       <router-link :to="{name:'test1',params:{name:'zhangsan',age:18}}">子路由1</router-link> |
       <router-link to="/mine/test2">子路由2</router-link> |
       <router-link to="/home">重定向</router-link> |
       <router-link to="/home/wangwu/20">重定向参数</router-link> |
       <router-link to="/lkw">别名</router-link> |
+      <router-link to="/movie">电影列表</router-link> |
     </div>
     <transition name="fade">
       <router-view/>
