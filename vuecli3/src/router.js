@@ -4,12 +4,13 @@ import Home from './views/Home.vue';
 import Mine from './views/Mine.vue';
 import Test1 from './views/Test1.vue';
 import Test2 from './views/Test2.vue';
+import Error from './views/Error.vue';
 
 
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: 'history',//hash
   base: process.env.BASE_URL,
   routes: [
     {
@@ -44,7 +45,6 @@ export default new Router({
               path:'test2',
               component:Test2
           },
-
       ]
     },
       {
@@ -55,5 +55,9 @@ export default new Router({
           path:'/home/:xx/:age',
           redirect: '/mine/test2/:xx/:age'
       },
+      {
+          path:'*',
+          component:Error
+      }
   ],
 });
