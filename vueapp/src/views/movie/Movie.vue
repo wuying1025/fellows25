@@ -1,5 +1,55 @@
 <template>
   <div class="movie">
-    <h1>Movie</h1>
+    <ul>
+      <li v-for="movie in movieList">
+        <div class="movie-img">
+          <img :src="movie.images.small" alt="">
+        </div>
+        <div class="movie-desc">
+            <h3>{{movie.title}}</h3>
+            <p>观众评 <span class="aver">{{movie.rating.average}}</span></p>
+            主演：<span v-for="actor in movie.casts">{{actor.name }} </span>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
+<script>
+  import Axios from 'axios';
+  export default{
+      data(){
+          return {
+            movieList:[]
+          }
+      },
+      created(){
+          //https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters
+          Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters')
+              .then((res)=>{
+                this.movieList = res.data.subjects;
+                console.log(this.movieList);
+              });
+      }
+  }
+</script>
+<style lang="scss">
+
+  .movie li{
+    display: flex;
+    padding:10px;
+    .movie-img{
+      flex-grow: 1;
+      width: 0;
+    }
+    .movie-desc{
+      flex-grow: 3;
+      width: 0;
+      margin-left: 20px;
+      .aver{
+        color:orange;
+      }
+    }
+  }
+
+
+</style>
