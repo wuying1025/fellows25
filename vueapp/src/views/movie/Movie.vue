@@ -30,6 +30,11 @@
                 this.movieList = res.data.subjects;
                 console.log(this.movieList);
               });
+//          Axios.get('/movie.json')
+//              .then((res)=>{
+//                  this.movieList = res.data.subjects;
+//                  console.log(this.movieList);
+//              });
       }
   }
 </script>
