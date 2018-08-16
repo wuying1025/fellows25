@@ -38,8 +38,14 @@
       components:{
           CommonHeader,
           CommonFooter
+      },
+      created(){
+          var path = this.$route.path;
+          var menu = this.menuList.filter(elem=>{
+            return elem.path == path;
+          })
+          this.$store.dispatch('changeBg',menu[0]);
       }
-
   }
 
 </script>
