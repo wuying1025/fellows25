@@ -23,6 +23,7 @@
           }
       },
       created(){
+          //https://www.cnblogs.com/trackingmore/p/7156877.html
           //https://developers.douban.com/wiki/?title=movie_v2
           Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters')
               .then((res)=>{
