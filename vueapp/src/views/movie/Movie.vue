@@ -23,7 +23,7 @@
           }
       },
       created(){
-          //https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters
+          //https://developers.douban.com/wiki/?title=movie_v2
           Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters')
               .then((res)=>{
                 this.movieList = res.data.subjects;
