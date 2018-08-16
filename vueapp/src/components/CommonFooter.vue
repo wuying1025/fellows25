@@ -1,20 +1,30 @@
 <template>
-    <ul class="footer">
+    <ul class="footer" :style="{background:bgColor}">
         <li v-for="menu in menuList">
-            <router-link :to="menu.path">{{menu.name}}</router-link>
+            <router-link :to="menu.path" @click.native="changeBg(menu)">{{menu.name}}</router-link>
         </li>
     </ul>
 </template>
 <script>
+    import {mapState} from 'vuex';
     export default{
-        props:['menuList']
+        props:['menuList'],
+        data(){
+            return {
+            }
+        },
+        methods:{
+            changeBg(menu){
+                this.$store.dispatch('changeBg',menu);
+            }
+        },
+        computed:mapState(['bgColor']),
     }
 </script>
 <style lang="scss">
     .footer {
         height: 1rem;
         width: 100%;
-        background: rgb(33, 150, 243);
         color: #fff;
         position: fixed;
         bottom: 0;

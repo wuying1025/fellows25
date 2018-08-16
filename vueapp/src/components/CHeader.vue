@@ -1,17 +1,20 @@
 <template>
-    <div class="header">
+    <div class="header" :style="{background:bgColor}">
         <span class="header-home">首页</span>
-        <h1 class="header-title">movie</h1>
+        <h1 class="header-title">{{title}}</h1>
     </div>
 </template>
 <script>
-    
+    import {mapState} from 'vuex';
+
+    export default{
+        computed:mapState(['bgColor','title']),
+    }
 </script>
 <style lang="scss">
     .header{
         height: 1rem;
         width: 100%;
-        background:rgb(33, 150, 243);
         color: #fff;
         position:fixed;
         top:0;
