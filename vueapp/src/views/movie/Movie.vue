@@ -44,24 +44,24 @@
       },
       methods:{
           getData(){
-//              Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start='+this.movieList.length+'&count=5')
-//                  .then((res)=>{
-//                      this.movieList = [...this.movieList,...res.data.subjects];
-//                      this.isShow = false;
-//                      if(res.data.subjects.length < 5){
-//                          this.isEnd = true;
-//                      }
-//                  });
-
-              Axios.get('/movie.json')
-              .then((res)=>{
-                  var arr = res.data.subjects.slice(this.movieList.length,this.movieList.length+5);
-                  this.movieList = [...this.movieList,...arr];
+              Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start='+this.movieList.length+'&count=5')
+                  .then((res)=>{
+                      this.movieList = [...this.movieList,...res.data.subjects];
                       this.isShow = false;
-                      if(arr.length < 5){
+                      if(res.data.subjects.length < 5){
                           this.isEnd = true;
                       }
-              });
+                  });
+
+//              Axios.get('/movie.json')
+//              .then((res)=>{
+//                  var arr = res.data.subjects.slice(this.movieList.length,this.movieList.length+5);
+//                  this.movieList = [...this.movieList,...arr];
+//                      this.isShow = false;
+//                      if(arr.length < 5){
+//                          this.isEnd = true;
+//                      }
+//              });
 
 
 
