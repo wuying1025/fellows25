@@ -15,7 +15,7 @@
         props: ['movie']
     }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
     li {
         display: flex;
         padding: 10px;
