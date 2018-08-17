@@ -1,18 +1,40 @@
 <template>
   <div class="music">
-    <h1>music</h1>
+    <aplayer autoplay listMaxHeight='20' :music="musicList[0]" :list="musicList" v-if="isShow">
+    </aplayer>
   </div>
 </template>
 <script>
-  export default{
-    created(){
-//      this.$store.dispatch('changeBg',{
-//          bgColor:'rgb(0, 150, 136)',
-//          title:'music'
-//      });
-//        console.log(1111);
-//        console.log(this.$route.path);
-    }
+    import Aplayer from 'vue-aplayer';
+    import Axios from 'axios';
+    export default{
+        data(){
+            return{
+              musicList:[],
+                isShow:false
+            }
+        },
+        created(){
+            Axios.get('/data/musicdata.json')
+                .then((res)=>{
+//                this.musicList = res.data.musicData;
+                    var data = res.data.musicData;
+                    data.forEach((elem) => {
+                        var obj = {};
+                        obj.title = elem.title;
+                        obj.src = elem.src;
+                        obj.artist = elem.author;
+                        obj.pic = elem.musicImgSrc;
+                        obj.lrc = elem.lrc;
+                        this.musicList.push(obj);
+                    });
+                    this.isShow = true;
+
+            })
+        },
+        components: {
+            Aplayer
+        }
   }
 </script>
 <style>
