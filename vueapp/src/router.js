@@ -6,6 +6,7 @@ import Photo from './views/photo/Photo.vue';
 import Music from './views/music/Music.vue';
 import MovieDetail from './views/movie/MovieDetail.vue';
 import MovieHome from './views/movie/MovieHome.vue';
+import PhotoDetail from './views/photo/PhotoDetail.vue';
 
 
 Vue.use(Router);
@@ -50,7 +51,10 @@ export default new Router({
           path:'/photo',
           name:'photo',
           component:Photo
-      },
+      },{
+          path:'/photoDetail/:index',
+          component:PhotoDetail
+      }
 
   ],
 });
