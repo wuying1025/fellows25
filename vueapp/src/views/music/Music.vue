@@ -15,6 +15,7 @@
             }
         },
         created(){
+
             Axios.get('data/musicdata.json')
                 .then((res)=>{
 //                this.musicList = res.data.musicData;

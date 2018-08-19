@@ -17,6 +17,7 @@
         width: 100%;
         color: #fff;
         position:fixed;
+        z-index: 1;
         top:0;
         line-height: 1rem;
         &-home{

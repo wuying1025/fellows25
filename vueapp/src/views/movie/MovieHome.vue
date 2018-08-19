@@ -70,14 +70,15 @@
                           this.isEnd = true;
                       }
               });
-
-
-
           }
       },
       components:{
           MovieList
+      },
+      destroyed(){
+          window.onscroll = null;
       }
+
   }
 </script>
 <style scoped lang="scss">
