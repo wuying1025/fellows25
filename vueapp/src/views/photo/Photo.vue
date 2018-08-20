@@ -17,6 +17,7 @@
       created(){
           Axios.get('data/photodata.json')
               .then((res)=>{
+//                 src =  require('@/assets/',src);
               this.photoList = res.data.photoData;
               this.$store.dispatch('setPhoto',this.photoList);
           })
