@@ -19,10 +19,10 @@
                     msg:'商品列表。。。'
                 }
             }
-            change(){
+            change(msg){
                 // console.log(msg)
                 this.setState({
-                    msg:'123'
+                    msg:msg
                 })
             }
             render(){
@@ -39,9 +39,6 @@
         class Product extends React.Component{
             constructor(props) {
                 super(props);
-                this.state= {
-                    msg:'123'
-                }
             }
             render(){
                 return (
