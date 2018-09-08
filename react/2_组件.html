@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        //无状态组件
+        let Welcome = (props) =>{
+            return (
+                <div>
+                    <h1>{props.name}</h1>
+                    <p>hello 你好。。。。。 {props.description}</p>
+                    <p>{props.children}</p>
+                </div>
+            );
+        }
+        //jsx
+        ReactDOM.render(
+            <div>
+                <Welcome name="唯创" description="唯创网讯是省内。。。。。">6666</Welcome>
+                <Welcome name="唯创" description="唯创网讯是省内。。。。。">6666</Welcome>
+            </div>
+            ,
+            // <Welcome name="唯创" description="唯创网讯是省内。。。。。"/>,
+            document.getElementById('root')
+        );
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>

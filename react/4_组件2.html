@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        //有状态组件
+        class Welcome extends React.Component{
+            constructor(props) {
+                super(props);
+                // console.log(props);
+            }
+            render(){
+                return <h1>{this.props.name }  {this.props.children}</h1>;
+            }
+        }
+        //jsx
+        ReactDOM.render(
+            <Welcome name="唯创"  description="唯创网讯是省内。。。。。">666</Welcome>,
+            document.getElementById('root')
+        );
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        aaa
+    </div>
+    <script>
+        var obj = {
+            name:'zhangsan'
+        }
+        function a(name,age){
+            console.log(this,name,age);
+        }
+        a.call(obj,'xxx',20);
+        a.apply(obj,['xxx',20]);
+        a.bind(obj,'xxx',20)();
+
+
+
+
+
+         var oDiv = document.getElementById('div1');
+        oDiv.onclick = function(){
+            // console.log(this);
+            setTimeout((function(){
+                console.log(this.innerHTML);
+            }).bind(this),1000);
+        }
+        // setInterval(function(){
+        //     // console.log(this);
+        // },1000)
+
+
+
+    </script>
+    
+</body>
+</html>
