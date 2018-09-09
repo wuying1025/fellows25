@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Show extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    list:[
+                        {
+                            name:'电脑',
+                            price:5000
+                        },
+                        {
+                            name:'手机',
+                            price:8888
+                        },
+                        {
+                            name:'洗衣服',
+                            price:18000
+                        }
+                
+                    ]
+                }
+            }
+            render(){
+                return (
+                    <ul>
+                        {
+                            this.state.list.map((ele,index)=>{
+                                return <li>{ele.name} --  {ele.price}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        
+
+        ReactDOM.render(
+             <Show></Show>
+            ,
+            document.getElementById('root')
+        );
+    </script>
+        
+    
+</body>
+</html>
