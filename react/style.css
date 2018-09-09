@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width:800px;    
+    margin:0 auto;
+    
+}
+h1{
+    text-align: center;
+}
+.task{
+    height: 35px;
+    line-height: 35px;
+}
+.task span{
+    width:80px;
+    float: left;
+}
+.task input{
+    width:300px;
+    height:30px;
+    float: left;
+    outline: none;
+}
+.btn button{
+    margin-left:50px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    margin:10px 0;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    outline: none;
+}
+ul{
+    border:1px solid #ccc;
+    border-radius:10px;
+    overflow: hidden;
+}
+li{
+    list-style: none;
+    padding:10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+li button{
+    float:right;
+}
+.fished{
+    background: #fffc9f;
+
+}
+li span{
+    margin-left:10px;
+}
+.fished span{
+    text-decoration: line-through;
+}
+.unfished{
+    background: #e0fdb6;
+}

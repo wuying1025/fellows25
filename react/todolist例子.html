@@ -10,9 +10,9 @@
 <body>
     <div id="root">
     </div>
-    <script src="../../react.development.js"></script>
-    <script src="../../react-dom.development.js"></script>
-    <script src="../../build/browser.min.js"></script>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
     <!-- <script type="text/babel" src="Main.js""></script> -->
     <script type="text/babel">
         class Main extends React.Component{
@@ -30,7 +30,7 @@
                     }, {
                         id: 2,
                         name: '打豆豆',
-                        status : 0
+                        status : 1
                     }],
                     maxId:2,
                     finished:0
@@ -66,6 +66,7 @@
             delHandle(index){
                 var arr = this.state.list;
                 arr.splice(index,1);
+                console.log(arr);
                 this.setState({
                     list:arr
                 })
@@ -78,7 +79,7 @@
                         <ul>
                             {
                                 this.state.list.map((item,index)=>{
-                                    return <ListItem  item={item} index={index} key={index} fished={this.fishedHandle.bind(this)} del={this.delHandle.bind(this)}></ListItem>
+                                    return <ListItem  item={item} index={index}  key={item.id} fished={this.fishedHandle.bind(this)} del={this.delHandle.bind(this)}></ListItem>
                                 })
                             }
                             <li>{this.state.finished}已完成/{this.state.list.length}全部</li>
