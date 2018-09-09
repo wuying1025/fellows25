@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    count:100
+                }
+            }
+            change(m){
+                this.setState({
+                    count:this.state.count-m
+                });
+                // console.log('111')
+            }
+            render(){
+                return (
+                    <div>
+                        <h3>剩余士兵数量 {this.state.count}</h3>  
+                        <Gen name="a" num={100} val={20} count={this.state.count} myClick={this.change.bind(this)}></Gen>
+                        <Gen name="b" num={80} val={10} count={this.state.count} myClick={this.change.bind(this)}></Gen>
+                    </div>
+                )
+            }
+        }
+        class Gen extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    num:this.props.num
+                }
+            }
+            change(m){
+                if(this.props.count>=m){
+                    this.setState({
+                        num:this.state.num+m
+                    });
+                    this.props.myClick(m);
+                }else{
+                    alert('士兵数量不足。。。');
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        <p>将军{this.props.name}有士兵：{this.state.num}</p>
+                        <button onClick={this.change.bind(this,this.props.val)}>调兵</button>
+                    </div>
+
+                )
+            }
+            
+        }
+        
+        ReactDOM.render(
+            <Main></Main>
+            ,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
