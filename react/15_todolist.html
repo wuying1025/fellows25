@@ -25,32 +25,37 @@
             constructor(props) {
                 super(props);
                 this.state = {
+                    count:0,
                     list:[
                         {
+                            id:0,
                             name:'吃饭',
                             isFinished:true
                         },
                         {
+                            id:1,
                             name:'睡觉',
                             isFinished:true
                         },
                         {
+                            id:2,
                             name:'打豆豆',
                             isFinished:false
                         }
-                        
                     ]
                 }
             }
-
             saveHandle(val){
                 // console.log(111)
                 var arr = this.state.list;
-                arr.push({name:val});
+                arr.push({
+                    id:this.state.list[this.state.list.length-1].id+1,
+                    name:val,
+                    isFinished:false
+                });
                 this.setState({
                     list:arr
                 })
-
             }
             delHandle(index){
                 // console.log(index);
@@ -61,6 +66,7 @@
                     list:arr
                 })
             }
+            //勾选
             changeHanle(index){
                 // console.log(index);
                 let arr = this.state.list;
@@ -69,7 +75,24 @@
                 this.setState({
                     list:arr
                 })
+                //num 记录被勾选的数量
+                let num = 0;
+                arr.forEach(item => {
+                    if(item.isFinished){
+                        num++
+                    }
+                });
+                this.setState({
+                    count:num
+                })
             }
+
+            
+
+
+
+
+
             render(){
                 return (
                     <div>
@@ -78,10 +101,10 @@
                         <ul>
                             {
                                 this.state.list.map((item,index)=>{
-                                    return <ListItem key={index} index={index} item={item} myClick={this.delHandle.bind(this) }  change={this.changeHanle.bind(this)}></ListItem>
+                                    return <ListItem key={item.id} index={index} item={item} myClick={this.delHandle.bind(this) }  change={this.changeHanle.bind(this)}></ListItem>
                                 })
                             }
-                            <li>0已完成/0全部</li>
+                            <li>{this.state.count}已完成/{this.state.list.length}全部</li>
                         </ul>
                     </div>
                     
