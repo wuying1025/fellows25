@@ -40,6 +40,15 @@
                 })
 
             }
+            delHandle(index){
+                // console.log(index);
+                let arr = this.state.list;
+                arr.splice(index,1);
+
+                this.setState({
+                    list:arr
+                })
+            }
             render(){
                 return (
                     <div>
@@ -48,7 +57,7 @@
                         <ul>
                             {
                                 this.state.list.map((item,index)=>{
-                                    return <ListItem key={index} item={item}></ListItem>
+                                    return <ListItem key={index} index={index} item={item} myClick={this.delHandle.bind(this)}></ListItem>
                                 })
                             }
                             <li>0已完成/0全部</li>
@@ -96,7 +105,9 @@
                     <li>
                         <input type="checkbox" />
                         <span>{this.props.item.name}</span>
-                        <button>删除</button>    
+                        <button onClick={ ()=>{
+                            this.props.myClick(this.props.index);
+                        }}>删除</button>    
                     </li>
                 )
             }

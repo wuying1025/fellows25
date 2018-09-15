@@ -26,13 +26,16 @@
             add(event){
                 console.log('1111');
                 console.log(event.target);
+
+                console.log(this.refs.h.innerHTML)
             }
             render(){
                 return (
                     <div>
                         <button value="aaa"
                         onClick={
-                            (event)=>{ this.add(event) }
+                            // (event)=>{ this.add(event) }
+                            this.add.bind(this,'aa');
                         }
                         ref="btn"
                         >click</button>
