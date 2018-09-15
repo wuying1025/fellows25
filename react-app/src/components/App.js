@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import store from './../store';
 
-//action 
+//action  是对象  对象中必须有个type
 const add = () => {
 	console.log('---action');
 	return {

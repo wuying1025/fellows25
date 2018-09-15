@@ -1,11 +1,10 @@
 import {createStore} from 'redux';
+import reducer from './reducer';
 
 const inintialState = {
-    count:0
+    count:5,
 }
 //reducer  state
-const store = createStore(()=>{
-
-},inintialState);
+const store = createStore(reducer,inintialState);
 
 export default store;
