@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state = {
+                    msg:'哈哈'
+                }
+                console.log('Main---- constructor');
+            }
+
+            
+            componentWillMount() {
+                console.log('Main---- componentWillMount');
+            }
+            componentDidMount() {
+                console.log('Main---- componentDidMount');
+            }
+            shouldComponentUpdate(nextProps,nextState){
+                console.log('Main---- shouldComponentUpdate',nextProps,nextState);
+                return true;
+            }
+            componentWillUpdate() {
+                console.log('Main---- componentWillUpdate');
+            }
+            componentDidUpdate() {
+                console.log('Main---- componentDidUpdate');
+            }
+            componentWillUnmount(){
+                console.log('Main---- componentWillUnmount');
+            }
+
+            change(){
+                this.setState({
+                    msg:'呵呵'
+                })
+            }
+            del(){
+                ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+            }
+            
+            render(){
+                console.log('Main---- render');
+                return (
+                    <div>
+                        <h1>{this.state.msg}</h1>
+                        <button onClick={this.change.bind(this)}>click</button>
+                        <button onClick={this.del.bind(this)}>del</button>
+                        <Sub msg={this.state.msg}></Sub>
+                    </div>
+                )
+            }
+        }
+        class Sub extends React.Component{
+            constructor(props) {
+                super(props);
+                console.log('Sub---- constructor');
+            }
+            componentWillMount() {
+                console.log('Sub---- componentWillMount');
+            }
+            componentDidMount() {
+                console.log('Sub---- componentDidMount');
+            }
+            componentWillReceiveProps(nextProps){
+                console.log('Sub---- ComponentWillReceiveProps',nextProps);
+            }
+            shouldComponentUpdate(nextProps,nextState){
+                console.log('Sub---- shouldComponentUpdate',nextProps,nextState);
+                return true;
+            }
+            componentWillUpdate(nextProps,nextState) {
+                console.log('Sub---- componentWillUpdate');
+            }
+            componentDidUpdate() {
+                console.log('Sub---- componentDidUpdate');
+            }
+            render(){
+                console.log('Sub---- render');
+                return (
+                    <div>
+                        <p>{this.props.msg}</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Main></Main>
+            ,
+            document.getElementById('root')
+        )
+
+    </script>
+    
+</body>
+</html>
