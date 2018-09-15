@@ -75,7 +75,13 @@
                 this.setState({
                     list:arr
                 })
+                this.fn();
+                
+            }
+
+            fn(){
                 //num 记录被勾选的数量
+                let arr = this.state.list;
                 let num = 0;
                 arr.forEach(item => {
                     if(item.isFinished){
@@ -87,10 +93,9 @@
                 })
             }
 
-            
-
-
-
+            componentDidMount(){
+                this.fn();
+            }
 
 
             render(){
