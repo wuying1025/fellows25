@@ -4,7 +4,9 @@ import {
     Route, 
     Link ,
     Switch,
-    Redirect
+    Redirect,
+    Prompt,
+    NavLink
 } from 'react-router-dom';
 import PageA from './PageA';
 import PageB from './PageB';
@@ -15,22 +17,48 @@ const Jump = (props) => {
     return <Link to={props.to}>jump</Link>
 }
 
+const X = (props) => {
+    return (
+        <div>
+            <button 
+                onClick={()=>{
+                    // console.log(props);
+
+                    props.history.push('/');
+                }}
+            >click</button>
+        </div>
+    )
+}
+
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            show:false
+        }
+        console.log("+++++",props);
+    }
+    
     render() {
         return (
             <div>
                 main主页面
                 <Router>
                     <div>
-                        <Link to="/">首页</Link>
+                        <NavLink activeClassName="selected" to="/" isActive={()=>{
+                            console.log(this.props);
+                        }}>首页</NavLink>
                         ---
-                        <Link to="/a/5">跳转A</Link>
+                        <NavLink to="/a/5">跳转A</NavLink>
                         ----
-                        <Link to="/b">跳转B</Link>
+                        <NavLink to="/b">跳转B</NavLink>
                         ----
-                        <Link to="/render">render</Link>
+                        <NavLink to="/render">render</NavLink>
                         ---
-                        <Link to="/children/6">children</Link>
+                        <NavLink to="/children/6">children</NavLink>
+                        ---
+                        <NavLink to="/x">编程式导航</NavLink>
                         {/* <Switch>
                             <Route path="/a" component={PageA}></Route>
                             <Route path="/b" component={PageB}></Route>
@@ -43,8 +71,11 @@ class Main extends Component {
                             // return <h1>render页</h1>
                             return <Redirect to="/b" />
                         }}></Route>
-                        <Route path="/children/:num" children={Children}></Route>
+                        {/* <Route path="/children/:num" children={Children}></Route> */}
                         <Jump to="/"></Jump>
+                        
+                        <Route path="/x" component={X}></Route>
+                        <Prompt when={this.state.show} message="是否留在当前页面" ></Prompt>
                     </div>
                 </Router>
             </div>
