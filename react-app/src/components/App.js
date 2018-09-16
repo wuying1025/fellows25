@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import store from './../store';
+import { connect } from 'react-redux';
 
 //action  是对象  对象中必须有个type
 const add = () => {
@@ -8,8 +9,6 @@ const add = () => {
 		type:'ADD'
 	}
 }
-
-
 class App extends Component {
 	addHandle(){
 		//触发action
@@ -18,11 +17,15 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<h1>标题</h1>
+				<h1>{this.props.count}</h1>
 				<button onClick = {this.addHandle.bind(this)}>click</button>
 			</div>
 		);
 	}
 }
-
-export default App;
+const mapStateToProps = (state) => {
+	return {
+		count:state.count
+	}
+}
+export default connect(mapStateToProps)(App);
