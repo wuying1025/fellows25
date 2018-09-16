@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 // class PageA extends Component {
 //     constructor(props) {
 //         super(props);
@@ -18,12 +17,15 @@ import React, { Component } from 'react';
 // }
 
 
-const PageA = ({match}) =>{
+const Children = ({match}) =>{
     return (
-        <div> A页面
-            {match.params.id}
+        <div> 
+			{
+				match?match.params.num:0
+			}
+			children页面
         </div>
     )
 }
 
-export default PageA;
+export default Children;
