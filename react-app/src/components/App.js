@@ -3,7 +3,7 @@ import store from './../store';
 import { connect } from 'react-redux';
 //action  是对象  对象中必须有个type
 const add = (num) => {
-	console.log('---action',text);
+	console.log('---action',num);
 	return {
 		type:'ADD',
 		text:num
@@ -18,16 +18,18 @@ class App extends Component {
 		return (
 			<div>
 				<h1>{this.props.count}</h1>
-				{/* <button onClick = { ()=>{
-						this.props.add(2);
+				<button onClick = { 
+					()=>{
+						this.props.add(2)	
 					}
-				}>click</button> */}
+				}>click</button>
 
-				<button onClick={this.addHandle.bind(this,2)}>++</button>
+				{/* <button onClick={this.addHandle.bind(this,2)}>++</button> */}
 			</div>
 		);
 	}
 }
+//获取state中的值   
 const mapStateToProps = (state) => {
 	return {
 		count:state.count
@@ -35,8 +37,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
 	return {
-		add: ()=>{
-			dispatch(add())
+		add: (a)=>{
+			dispatch(add(a))
 		}
 	}
 }
