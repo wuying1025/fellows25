@@ -13,6 +13,7 @@ import PageB from './PageB';
 import Home from './Home';
 import Children from './Children';
 
+import './../style.css';
 const Jump = (props) => {
     return <Link to={props.to}>jump</Link>
 }
@@ -35,47 +36,48 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state={
-            show:false
+            show:true
         }
         console.log("+++++",props);
     }
     
     render() {
+        let style = 
+            {
+                color:'#f00',
+                background:'green'
+            };
+        
         return (
+
             <div>
                 main主页面
                 <Router>
                     <div>
-                        <NavLink activeClassName="selected" to="/" isActive={()=>{
-                            console.log(this.props);
-                        }}>首页</NavLink>
-                        ---
-                        <NavLink to="/a/5">跳转A</NavLink>
+                        <NavLink to="/a/vvv"  activeClassName="aa"
+                            // activeStyle={
+                            //     style
+                            // }
+                            >a</NavLink>
                         ----
-                        <NavLink to="/b">跳转B</NavLink>
+                        <NavLink  activeClassName="aa"
+                            // activeStyle={
+                            //    style
+                            // }
+                             to="/b">b</NavLink>
                         ----
-                        <NavLink to="/render">render</NavLink>
-                        ---
-                        <NavLink to="/children/6">children</NavLink>
-                        ---
-                        <NavLink to="/x">编程式导航</NavLink>
-                        {/* <Switch>
-                            <Route path="/a" component={PageA}></Route>
-                            <Route path="/b" component={PageB}></Route>
-                            <Route path="/" component={Home}></Route>
-                        </Switch> */}
-                        <Route exact path="/" component={Home}></Route>
-                        <Route path="/a/:id" component={PageA}></Route>
-                        <Route path="/b" component={PageB}></Route>
-                        <Route path="/render" render={()=>{
-                            // return <h1>render页</h1>
-                            return <Redirect to="/b" />
-                        }}></Route>
-                        {/* <Route path="/children/:num" children={Children}></Route> */}
-                        <Jump to="/"></Jump>
-                        
-                        <Route path="/x" component={X}></Route>
-                        <Prompt when={this.state.show} message="是否留在当前页面" ></Prompt>
+
+                        <Link to="/a/about" >a</Link>
+                        ----
+                        <Link to="/a/1">b</Link>
+                        ----
+                        {/* <Link>c</Link> */}
+                        ----
+                        {/* <Switch> */}
+                            <Route exact path="/a/about" component={PageA} ></Route>
+                            <Route exact path="/a/:name" component={PageA} ></Route>
+                        {/* </Switch> */}
+                        <Prompt when={this.state.show} message="确定离开？"></Prompt>
                     </div>
                 </Router>
             </div>

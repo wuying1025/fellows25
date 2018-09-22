@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-
+import PageB from './PageB';
+import { 
+    BrowserRouter as Router, 
+    Route, 
+    Link ,
+    Switch,
+    Redirect,
+    Prompt,
+    NavLink
+} from 'react-router-dom';
 // class PageA extends Component {
 //     constructor(props) {
 //         super(props);
@@ -18,10 +27,24 @@ import React, { Component } from 'react';
 // }
 
 
-const PageA = ({match}) =>{
+const PageA = ({match,history}) =>{
     return (
-        <div> A页面
-            {match.params.id}
+        <div>
+            <Router>
+                <div>
+                    <Link to="/x">x</Link>
+                    ||
+                    <Link to="/y">y</Link>
+                </div>
+            </Router>
+            <button onClick={ ()=>{
+                history.push('/')
+            }
+            }>click</button>
+             A页面
+            {/* {match.params.id} */}
+
+            <PageB a="a" bb="bb"></PageB>
         </div>
     )
 }
