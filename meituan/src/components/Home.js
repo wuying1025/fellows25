@@ -13,39 +13,39 @@ export default class Home extends Component {
                         text:"美食"
                     },
                     {
-                        icon:'img2',
+                        icon:require('./../asset/img/img2.png'),
                         text:"电影"
                     },
                     {
-                        icon:'img3',
+                        icon:require('./../asset/img/img3.png'),
                         text:"酒店"
                     },
                     {
-                        icon:'img4',
+                        icon:require('./../asset/img/img4.png'),
                         text:"娱乐"
                     },
                     {
-                        icon:'img5',
+                        icon:require('./../asset/img/img5.png'),
                         text:"外卖"
                     },
                     {
-                        icon:'img6',
+                        icon:require('./../asset/img/img6.png'),
                         text:"ktv"
                     },
                     {
-                        icon:'img7',
+                        icon:require('./../asset/img/img7.png'),
                         text:"周边游"
                     },
                     {
-                        icon:'img8',
+                        icon:require('./../asset/img/img8.png'),
                         text:"丽人"
                     },
                     {
-                        icon:'img9',
+                        icon:require('./../asset/img/img9.png'),
                         text:"小吃"
                     },
                     {
-                        icon:'img10',
+                        icon:require('./../asset/img/img10.png'),
                         text:"机票"
                     },
                     {
@@ -53,15 +53,15 @@ export default class Home extends Component {
                         text:"美食"
                     },
                     {
-                        icon:'img2',
+                        icon:require('./../asset/img/img2.png'),
                         text:"电影"
                     },
                     {
-                        icon:require('./../asset/img/img1.png'),
+                        icon:require('./../asset/img/img3.png'),
                         text:"美食"
                     },
                     {
-                        icon:'img2',
+                        icon:require('./../asset/img/img4.png'),
                         text:"电影"
                     }
             ]
