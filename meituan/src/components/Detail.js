@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'whatwg-fetch';
-import DImg from './DImg';
+import DImg from './detail/DImg';
 
 
 export default class Detail extends Component {
