@@ -1,0 +1,14 @@
+.pro-container{
+    display: flex;
+}
+.pro-img{
+    width:1rem;
+    height:1rem;
+    margin-right:0.2rem;
+}
+.pro-content{
+    flex:1;
+}
+.pro-sold{
+    float: right;
+}
