@@ -12,3 +12,28 @@
 .am-search-cancel{
     color:#fff;
 }
+/*Gird */
+
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
+    width:63% !important;
+}
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text{
+    font-size:16px;
+}
+
+/*Flex*/
+.am-flexbox.am-flexbox-align-center{
+    background: #fff;
+    text-align: center;
+
+}
+
+.active-title{
+    color:rgb(68, 145, 48);
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.active-img{
+   width:1.5rem;
+}
