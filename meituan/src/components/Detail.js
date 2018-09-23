@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import 'whatwg-fetch';
 import DImg from './detail/DImg';
+import Container from './Container';
+import Comment from './detail/Comment';
 
 
 export default class Detail extends Component {
@@ -8,7 +10,7 @@ export default class Detail extends Component {
 		super(props);
 		this.state = {
 			row:{},
-			results:{}
+			results:[]
 		}
 		
 	}
@@ -29,9 +31,13 @@ export default class Detail extends Component {
 		return (
 			<div>
 				<DImg row={this.state.row}></DImg>
-				
-
-
+				<Container title="评价">
+					 {
+						 this.state.results.map((elem)=>{
+							 return <Comment elem={elem} key={elem.id}></Comment>
+						 })
+					 }
+				</Container>
 			</div>
 		)
 	}
