@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import './../asset/css/product.css';
+import { withRouter } from 'react-router-dom';
 
 
-export default (props) => {
+export default withRouter((props) => {
     return (
-        <div className="pro-container">
+        <div className="pro-container" onClick={
+            ()=>{
+                props.history.push('/detail/'+props.elem.product_id);
+            }
+        }>
             <img className="pro-img" src={props.elem.img}></img>
             <div className="pro-content" >
                 <div className="pro-title">{props.elem.product_name}</div>
@@ -17,4 +22,4 @@ export default (props) => {
             </div>
         </div>
     )
-}
+})

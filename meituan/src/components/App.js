@@ -11,7 +11,7 @@ export default class App extends Component {
 			<Router>
 				<div>
 					<Route exact path="/" component={Home}></Route>
-					<Route path="/detail" component={Detail}></Route>
+					<Route path="/detail/:id" component={Detail}></Route>
 				</div>
 			</Router>
 		</div>

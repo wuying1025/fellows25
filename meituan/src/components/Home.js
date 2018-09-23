@@ -4,6 +4,7 @@ import './../asset/css/home.css';
 import Container from './Container';
 import Product from './Product';
 import 'whatwg-fetch';
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
     constructor(props) {
@@ -119,10 +120,10 @@ export default class Home extends Component {
                 <Container title="猜你喜欢" >
                     {
                         this.state.product.map((elem,index)=>{
+                            // return <Link key={elem.product_id}  to="/detail"><Product elem={elem}></Product></Link>
                             return <Product key={elem.product_id} elem={elem}></Product>
                         })
                     }
-                    
                 </Container>
 
             </div>
